@@ -15,7 +15,9 @@ require('laravel-mix-purgecss');
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
-    .purgeCss();
+    .purgeCss({
+        whitelistPatternsChildren: [/nprogress$/]
+    });
 
 mix.options({
     processCssUrls: false,
